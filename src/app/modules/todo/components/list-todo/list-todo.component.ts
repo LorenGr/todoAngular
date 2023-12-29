@@ -39,6 +39,7 @@ export class ListTodoComponent {
         });
 
         dialogRef.afterClosed().subscribe(result => {
+            if (!result) return;
             this.store.dispatch(changeTodoName({
                 todo: {
                     ...todo,
