@@ -18,6 +18,7 @@ export class TodoComponent implements OnInit {
   statusEnum = TodoStatus;
 
   newTodo = new FormControl('', [Validators.required]);
+  selectedIndex = 0;
 
   allTodos$: Observable<Todo[]> = this.store.pipe(select(getAllTodos));
 
@@ -43,5 +44,10 @@ export class TodoComponent implements OnInit {
     this.store.dispatch(changeTodoName({ todo }))
   }
 
+  onTodoStatusChange(todo: Todo) {
+    if (todo.status === TodoStatus.InProgress) {
+      this.selectedIndex = 2;
+    }
+  }
 
 }

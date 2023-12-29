@@ -7,15 +7,15 @@
     <button mat-raised-button color="primary" [disabled]="newTodo.invalid" (click)="addNewTodo()">Add Todo</button>
   </div>
 
-  <mat-tab-group>
+  <mat-tab-group [selectedIndex]="selectedIndex">
     <mat-tab label="All">
-      <app-list-todo [items]="allTodos$"></app-list-todo>
+      <app-list-todo [items]="allTodos$" (todoStatusChanged)="onTodoStatusChange($event)"></app-list-todo>
     </mat-tab>
     <mat-tab label="In Progress">
       <app-list-todo [items]="inprogressTodos$"></app-list-todo>
     </mat-tab>
     <mat-tab label="Complete">
-      <app-list-todo [items]="completeTodos$"></app-list-todo>
+      <app-list-todo [showDoneButton]="false" [items]="completeTodos$"></app-list-todo>
     </mat-tab>
   </mat-tab-group>
 </div>
