@@ -13,7 +13,6 @@ import { EditTodoDialogComponent } from "../edit-todo-dialog/edit-todo-dialog.co
 })
 export class ListTodoComponent {
     @Input() items!: Observable<Todo[]>;
-    @Input() showDoneButton: boolean = true;
     @Output() todoStatusChanged = new EventEmitter<Todo>();
 
     constructor(

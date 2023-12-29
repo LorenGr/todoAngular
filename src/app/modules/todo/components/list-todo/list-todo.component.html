@@ -1,12 +1,12 @@
 <div class="todo-item" *ngFor="let todo of items | async">
     <span (click)="editTodo(todo)" [ngClass]="todo.status" class="todo-item-name">{{ todo.name }}</span>
     <div class="todo-actions">
-        <span *ngIf="isInProgress(todo)">
-            <button *ngIf="showDoneButton" mat-mini-fab color="primary" aria-label="Complete"
-                (click)="changeTodoStatus(todo)">
-                <mat-icon>done</mat-icon>
-            </button>
-        </span>
+
+        <button *ngIf="isInProgress(todo)" mat-mini-fab color="primary" aria-label="Complete"
+            (click)="changeTodoStatus(todo)">
+            <mat-icon>done</mat-icon>
+        </button>
+
         <button mat-mini-fab color="warn" aria-label="Delete" (click)="removeTodo(todo)">
             <mat-icon>delete</mat-icon>
         </button>
