@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="todo-list-form">
+    <mat-form-field>
+      <mat-label>Todo List Item</mat-label>
+      <input matInput placeholder="E.g. Send Email" [formControl]="newTodo">
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="newTodo.invalid" (click)="addNewTodo()">Add Todo</button>
+  </div>
+
+  <mat-tab-group>
+    <mat-tab label="All">
+      <app-list-todo [items]="allTodos$"></app-list-todo>
+    </mat-tab>
+    <mat-tab label="In Progress">
+      <app-list-todo [items]="inprogressTodos$"></app-list-todo>
+    </mat-tab>
+    <mat-tab label="Complete">
+      <app-list-todo [items]="completeTodos$"></app-list-todo>
+    </mat-tab>
+  </mat-tab-group>
+</div>
