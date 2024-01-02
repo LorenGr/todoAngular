@@ -4,6 +4,7 @@
 
 ### Added
 - Reducers for various actions:
+  - Adding todos.
   - Renaming todos.
   - Changing the status of todos.
   - Deletion of todos.
